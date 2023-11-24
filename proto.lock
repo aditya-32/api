@@ -39835,6 +39835,11 @@
                 "id": 10,
                 "name": "failure_percentage_ejection",
                 "type": "FailurePercentageEjection"
+              },
+              {
+                "id": 11,
+                "name": "successRateEjection",
+                "type": "SuccessRateEjection"
               }
             ]
           },
@@ -42861,6 +42866,11 @@
                 "id": 10,
                 "name": "failure_percentage_ejection",
                 "type": "FailurePercentageEjection"
+              },
+              {
+                "id": 11,
+                "name": "successRateEjection",
+                "type": "SuccessRateEjection"
               }
             ]
           },

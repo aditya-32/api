@@ -587,6 +587,32 @@ spec:
                               description: Determines whether to distinguish local
                                 origin failures from external errors.
                               type: boolean
+                            successRateEjection:
+                              properties:
+                                enforcementPercentage:
+                                  description: The % chance that an address will be
+                                    actually ejected when an outlier status is detected
+                                    through success rate statistics.
+                                  nullable: true
+                                  type: integer
+                                minimumHosts:
+                                  description: The number of addresses that must have
+                                    enough request volume to detect success rate outliers.
+                                  nullable: true
+                                  type: integer
+                                requestVolume:
+                                  description: The minimum number of total requests
+                                    that must be collected in one interval (as defined
+                                    by the interval duration above) to include this
+                                    address in success rate based outlier detection.
+                                  nullable: true
+                                  type: integer
+                                stdevFactor:
+                                  description: This factor is used to determine the
+                                    ejection threshold for success rate outlier ejection.
+                                  nullable: true
+                                  type: integer
+                              type: object
                           type: object
                         portLevelSettings:
                           description: Traffic policies specific to individual ports.
@@ -912,6 +938,36 @@ spec:
                                     description: Determines whether to distinguish
                                       local origin failures from external errors.
                                     type: boolean
+                                  successRateEjection:
+                                    properties:
+                                      enforcementPercentage:
+                                        description: The % chance that an address
+                                          will be actually ejected when an outlier
+                                          status is detected through success rate
+                                          statistics.
+                                        nullable: true
+                                        type: integer
+                                      minimumHosts:
+                                        description: The number of addresses that
+                                          must have enough request volume to detect
+                                          success rate outliers.
+                                        nullable: true
+                                        type: integer
+                                      requestVolume:
+                                        description: The minimum number of total requests
+                                          that must be collected in one interval (as
+                                          defined by the interval duration above)
+                                          to include this address in success rate
+                                          based outlier detection.
+                                        nullable: true
+                                        type: integer
+                                      stdevFactor:
+                                        description: This factor is used to determine
+                                          the ejection threshold for success rate
+                                          outlier ejection.
+                                        nullable: true
+                                        type: integer
+                                    type: object
                                 type: object
                               port:
                                 description: Specifies the number of a port on the
@@ -1344,6 +1400,32 @@ spec:
                         description: Determines whether to distinguish local origin
                           failures from external errors.
                         type: boolean
+                      successRateEjection:
+                        properties:
+                          enforcementPercentage:
+                            description: The % chance that an address will be actually
+                              ejected when an outlier status is detected through success
+                              rate statistics.
+                            nullable: true
+                            type: integer
+                          minimumHosts:
+                            description: The number of addresses that must have enough
+                              request volume to detect success rate outliers.
+                            nullable: true
+                            type: integer
+                          requestVolume:
+                            description: The minimum number of total requests that
+                              must be collected in one interval (as defined by the
+                              interval duration above) to include this address in
+                              success rate based outlier detection.
+                            nullable: true
+                            type: integer
+                          stdevFactor:
+                            description: This factor is used to determine the ejection
+                              threshold for success rate outlier ejection.
+                            nullable: true
+                            type: integer
+                        type: object
                     type: object
                   portLevelSettings:
                     description: Traffic policies specific to individual ports.
@@ -1655,6 +1737,32 @@ spec:
                               description: Determines whether to distinguish local
                                 origin failures from external errors.
                               type: boolean
+                            successRateEjection:
+                              properties:
+                                enforcementPercentage:
+                                  description: The % chance that an address will be
+                                    actually ejected when an outlier status is detected
+                                    through success rate statistics.
+                                  nullable: true
+                                  type: integer
+                                minimumHosts:
+                                  description: The number of addresses that must have
+                                    enough request volume to detect success rate outliers.
+                                  nullable: true
+                                  type: integer
+                                requestVolume:
+                                  description: The minimum number of total requests
+                                    that must be collected in one interval (as defined
+                                    by the interval duration above) to include this
+                                    address in success rate based outlier detection.
+                                  nullable: true
+                                  type: integer
+                                stdevFactor:
+                                  description: This factor is used to determine the
+                                    ejection threshold for success rate outlier ejection.
+                                  nullable: true
+                                  type: integer
+                              type: object
                           type: object
                         port:
                           description: Specifies the number of a port on the destination
@@ -2151,6 +2259,32 @@ spec:
                               description: Determines whether to distinguish local
                                 origin failures from external errors.
                               type: boolean
+                            successRateEjection:
+                              properties:
+                                enforcementPercentage:
+                                  description: The % chance that an address will be
+                                    actually ejected when an outlier status is detected
+                                    through success rate statistics.
+                                  nullable: true
+                                  type: integer
+                                minimumHosts:
+                                  description: The number of addresses that must have
+                                    enough request volume to detect success rate outliers.
+                                  nullable: true
+                                  type: integer
+                                requestVolume:
+                                  description: The minimum number of total requests
+                                    that must be collected in one interval (as defined
+                                    by the interval duration above) to include this
+                                    address in success rate based outlier detection.
+                                  nullable: true
+                                  type: integer
+                                stdevFactor:
+                                  description: This factor is used to determine the
+                                    ejection threshold for success rate outlier ejection.
+                                  nullable: true
+                                  type: integer
+                              type: object
                           type: object
                         portLevelSettings:
                           description: Traffic policies specific to individual ports.
@@ -2476,6 +2610,36 @@ spec:
                                     description: Determines whether to distinguish
                                       local origin failures from external errors.
                                     type: boolean
+                                  successRateEjection:
+                                    properties:
+                                      enforcementPercentage:
+                                        description: The % chance that an address
+                                          will be actually ejected when an outlier
+                                          status is detected through success rate
+                                          statistics.
+                                        nullable: true
+                                        type: integer
+                                      minimumHosts:
+                                        description: The number of addresses that
+                                          must have enough request volume to detect
+                                          success rate outliers.
+                                        nullable: true
+                                        type: integer
+                                      requestVolume:
+                                        description: The minimum number of total requests
+                                          that must be collected in one interval (as
+                                          defined by the interval duration above)
+                                          to include this address in success rate
+                                          based outlier detection.
+                                        nullable: true
+                                        type: integer
+                                      stdevFactor:
+                                        description: This factor is used to determine
+                                          the ejection threshold for success rate
+                                          outlier ejection.
+                                        nullable: true
+                                        type: integer
+                                    type: object
                                 type: object
                               port:
                                 description: Specifies the number of a port on the
@@ -2908,6 +3072,32 @@ spec:
                         description: Determines whether to distinguish local origin
                           failures from external errors.
                         type: boolean
+                      successRateEjection:
+                        properties:
+                          enforcementPercentage:
+                            description: The % chance that an address will be actually
+                              ejected when an outlier status is detected through success
+                              rate statistics.
+                            nullable: true
+                            type: integer
+                          minimumHosts:
+                            description: The number of addresses that must have enough
+                              request volume to detect success rate outliers.
+                            nullable: true
+                            type: integer
+                          requestVolume:
+                            description: The minimum number of total requests that
+                              must be collected in one interval (as defined by the
+                              interval duration above) to include this address in
+                              success rate based outlier detection.
+                            nullable: true
+                            type: integer
+                          stdevFactor:
+                            description: This factor is used to determine the ejection
+                              threshold for success rate outlier ejection.
+                            nullable: true
+                            type: integer
+                        type: object
                     type: object
                   portLevelSettings:
                     description: Traffic policies specific to individual ports.
@@ -3219,6 +3409,32 @@ spec:
                               description: Determines whether to distinguish local
                                 origin failures from external errors.
                               type: boolean
+                            successRateEjection:
+                              properties:
+                                enforcementPercentage:
+                                  description: The % chance that an address will be
+                                    actually ejected when an outlier status is detected
+                                    through success rate statistics.
+                                  nullable: true
+                                  type: integer
+                                minimumHosts:
+                                  description: The number of addresses that must have
+                                    enough request volume to detect success rate outliers.
+                                  nullable: true
+                                  type: integer
+                                requestVolume:
+                                  description: The minimum number of total requests
+                                    that must be collected in one interval (as defined
+                                    by the interval duration above) to include this
+                                    address in success rate based outlier detection.
+                                  nullable: true
+                                  type: integer
+                                stdevFactor:
+                                  description: This factor is used to determine the
+                                    ejection threshold for success rate outlier ejection.
+                                  nullable: true
+                                  type: integer
+                              type: object
                           type: object
                         port:
                           description: Specifies the number of a port on the destination
