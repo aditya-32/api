@@ -39838,7 +39838,7 @@
               },
               {
                 "id": 11,
-                "name": "successRateEjection",
+                "name": "success_rate_ejection",
                 "type": "SuccessRateEjection"
               }
             ]
@@ -42869,7 +42869,7 @@
               },
               {
                 "id": 11,
-                "name": "successRateEjection",
+                "name": "success_rate_ejection",
                 "type": "SuccessRateEjection"
               }
             ]
