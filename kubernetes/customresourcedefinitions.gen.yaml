@@ -541,6 +541,34 @@ spec:
                                 failures before ejection occurs.
                               nullable: true
                               type: integer
+                            failurePercentageEjection:
+                              description: FailurePercent Algorithm for Grpc-xds proxyless
+                                for deciding if the host is an outlier or not.
+                              properties:
+                                enforcementPercentage:
+                                  description: The % chance that an address will be
+                                    actually ejected when an outlier status is detected
+                                    through failure percentage statistics.
+                                  nullable: true
+                                  type: integer
+                                minimumHosts:
+                                  description: The minimum number of addresses in
+                                    order to perform failure percentage-based ejection.
+                                  nullable: true
+                                  type: integer
+                                requestVolume:
+                                  description: The minimum number of total requests
+                                    that must be collected in one interval (as defined
+                                    by the interval duration above) to perform failure
+                                    percentage-based ejection for this address.
+                                  nullable: true
+                                  type: integer
+                                threshold:
+                                  description: The failure percentage to use when
+                                    determining failure percentage-based outlier detection.
+                                  nullable: true
+                                  type: integer
+                              type: object
                             interval:
                               description: Time interval between ejection sweep analysis.
                               type: string
@@ -831,6 +859,39 @@ spec:
                                       originated failures before ejection occurs.
                                     nullable: true
                                     type: integer
+                                  failurePercentageEjection:
+                                    description: FailurePercent Algorithm for Grpc-xds
+                                      proxyless for deciding if the host is an outlier
+                                      or not.
+                                    properties:
+                                      enforcementPercentage:
+                                        description: The % chance that an address
+                                          will be actually ejected when an outlier
+                                          status is detected through failure percentage
+                                          statistics.
+                                        nullable: true
+                                        type: integer
+                                      minimumHosts:
+                                        description: The minimum number of addresses
+                                          in order to perform failure percentage-based
+                                          ejection.
+                                        nullable: true
+                                        type: integer
+                                      requestVolume:
+                                        description: The minimum number of total requests
+                                          that must be collected in one interval (as
+                                          defined by the interval duration above)
+                                          to perform failure percentage-based ejection
+                                          for this address.
+                                        nullable: true
+                                        type: integer
+                                      threshold:
+                                        description: The failure percentage to use
+                                          when determining failure percentage-based
+                                          outlier detection.
+                                        nullable: true
+                                        type: integer
+                                    type: object
                                   interval:
                                     description: Time interval between ejection sweep
                                       analysis.
@@ -1237,6 +1298,34 @@ spec:
                           failures before ejection occurs.
                         nullable: true
                         type: integer
+                      failurePercentageEjection:
+                        description: FailurePercent Algorithm for Grpc-xds proxyless
+                          for deciding if the host is an outlier or not.
+                        properties:
+                          enforcementPercentage:
+                            description: The % chance that an address will be actually
+                              ejected when an outlier status is detected through failure
+                              percentage statistics.
+                            nullable: true
+                            type: integer
+                          minimumHosts:
+                            description: The minimum number of addresses in order
+                              to perform failure percentage-based ejection.
+                            nullable: true
+                            type: integer
+                          requestVolume:
+                            description: The minimum number of total requests that
+                              must be collected in one interval (as defined by the
+                              interval duration above) to perform failure percentage-based
+                              ejection for this address.
+                            nullable: true
+                            type: integer
+                          threshold:
+                            description: The failure percentage to use when determining
+                              failure percentage-based outlier detection.
+                            nullable: true
+                            type: integer
+                        type: object
                       interval:
                         description: Time interval between ejection sweep analysis.
                         type: string
@@ -1520,6 +1609,34 @@ spec:
                                 failures before ejection occurs.
                               nullable: true
                               type: integer
+                            failurePercentageEjection:
+                              description: FailurePercent Algorithm for Grpc-xds proxyless
+                                for deciding if the host is an outlier or not.
+                              properties:
+                                enforcementPercentage:
+                                  description: The % chance that an address will be
+                                    actually ejected when an outlier status is detected
+                                    through failure percentage statistics.
+                                  nullable: true
+                                  type: integer
+                                minimumHosts:
+                                  description: The minimum number of addresses in
+                                    order to perform failure percentage-based ejection.
+                                  nullable: true
+                                  type: integer
+                                requestVolume:
+                                  description: The minimum number of total requests
+                                    that must be collected in one interval (as defined
+                                    by the interval duration above) to perform failure
+                                    percentage-based ejection for this address.
+                                  nullable: true
+                                  type: integer
+                                threshold:
+                                  description: The failure percentage to use when
+                                    determining failure percentage-based outlier detection.
+                                  nullable: true
+                                  type: integer
+                              type: object
                             interval:
                               description: Time interval between ejection sweep analysis.
                               type: string
@@ -1988,6 +2105,34 @@ spec:
                                 failures before ejection occurs.
                               nullable: true
                               type: integer
+                            failurePercentageEjection:
+                              description: FailurePercent Algorithm for Grpc-xds proxyless
+                                for deciding if the host is an outlier or not.
+                              properties:
+                                enforcementPercentage:
+                                  description: The % chance that an address will be
+                                    actually ejected when an outlier status is detected
+                                    through failure percentage statistics.
+                                  nullable: true
+                                  type: integer
+                                minimumHosts:
+                                  description: The minimum number of addresses in
+                                    order to perform failure percentage-based ejection.
+                                  nullable: true
+                                  type: integer
+                                requestVolume:
+                                  description: The minimum number of total requests
+                                    that must be collected in one interval (as defined
+                                    by the interval duration above) to perform failure
+                                    percentage-based ejection for this address.
+                                  nullable: true
+                                  type: integer
+                                threshold:
+                                  description: The failure percentage to use when
+                                    determining failure percentage-based outlier detection.
+                                  nullable: true
+                                  type: integer
+                              type: object
                             interval:
                               description: Time interval between ejection sweep analysis.
                               type: string
@@ -2278,6 +2423,39 @@ spec:
                                       originated failures before ejection occurs.
                                     nullable: true
                                     type: integer
+                                  failurePercentageEjection:
+                                    description: FailurePercent Algorithm for Grpc-xds
+                                      proxyless for deciding if the host is an outlier
+                                      or not.
+                                    properties:
+                                      enforcementPercentage:
+                                        description: The % chance that an address
+                                          will be actually ejected when an outlier
+                                          status is detected through failure percentage
+                                          statistics.
+                                        nullable: true
+                                        type: integer
+                                      minimumHosts:
+                                        description: The minimum number of addresses
+                                          in order to perform failure percentage-based
+                                          ejection.
+                                        nullable: true
+                                        type: integer
+                                      requestVolume:
+                                        description: The minimum number of total requests
+                                          that must be collected in one interval (as
+                                          defined by the interval duration above)
+                                          to perform failure percentage-based ejection
+                                          for this address.
+                                        nullable: true
+                                        type: integer
+                                      threshold:
+                                        description: The failure percentage to use
+                                          when determining failure percentage-based
+                                          outlier detection.
+                                        nullable: true
+                                        type: integer
+                                    type: object
                                   interval:
                                     description: Time interval between ejection sweep
                                       analysis.
@@ -2684,6 +2862,34 @@ spec:
                           failures before ejection occurs.
                         nullable: true
                         type: integer
+                      failurePercentageEjection:
+                        description: FailurePercent Algorithm for Grpc-xds proxyless
+                          for deciding if the host is an outlier or not.
+                        properties:
+                          enforcementPercentage:
+                            description: The % chance that an address will be actually
+                              ejected when an outlier status is detected through failure
+                              percentage statistics.
+                            nullable: true
+                            type: integer
+                          minimumHosts:
+                            description: The minimum number of addresses in order
+                              to perform failure percentage-based ejection.
+                            nullable: true
+                            type: integer
+                          requestVolume:
+                            description: The minimum number of total requests that
+                              must be collected in one interval (as defined by the
+                              interval duration above) to perform failure percentage-based
+                              ejection for this address.
+                            nullable: true
+                            type: integer
+                          threshold:
+                            description: The failure percentage to use when determining
+                              failure percentage-based outlier detection.
+                            nullable: true
+                            type: integer
+                        type: object
                       interval:
                         description: Time interval between ejection sweep analysis.
                         type: string
@@ -2967,6 +3173,34 @@ spec:
                                 failures before ejection occurs.
                               nullable: true
                               type: integer
+                            failurePercentageEjection:
+                              description: FailurePercent Algorithm for Grpc-xds proxyless
+                                for deciding if the host is an outlier or not.
+                              properties:
+                                enforcementPercentage:
+                                  description: The % chance that an address will be
+                                    actually ejected when an outlier status is detected
+                                    through failure percentage statistics.
+                                  nullable: true
+                                  type: integer
+                                minimumHosts:
+                                  description: The minimum number of addresses in
+                                    order to perform failure percentage-based ejection.
+                                  nullable: true
+                                  type: integer
+                                requestVolume:
+                                  description: The minimum number of total requests
+                                    that must be collected in one interval (as defined
+                                    by the interval duration above) to perform failure
+                                    percentage-based ejection for this address.
+                                  nullable: true
+                                  type: integer
+                                threshold:
+                                  description: The failure percentage to use when
+                                    determining failure percentage-based outlier detection.
+                                  nullable: true
+                                  type: integer
+                              type: object
                             interval:
                               description: Time interval between ejection sweep analysis.
                               type: string

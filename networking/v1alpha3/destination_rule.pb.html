@@ -6,7 +6,7 @@ layout: protoc-gen-docs
 generator: protoc-gen-docs
 schema: istio.networking.v1alpha3.DestinationRule
 aliases: [/docs/reference/config/networking/v1alpha3/destination-rule]
-number_of_entries: 23
+number_of_entries: 24
 ---
 <p><code>DestinationRule</code> defines policies that apply to traffic intended for a
 service after routing has occurred. These rules specify configuration
@@ -889,6 +889,90 @@ threshold, outlier detection will be disabled and the proxy will load balance
 across all hosts in the pool (healthy and unhealthy). The threshold can be
 disabled by setting it to 0%. The default is 0% as it&rsquo;s not typically
 applicable in k8s environments with few pods per service.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="OutlierDetection-failure_percentage_ejection">
+<td><code>failurePercentageEjection</code></td>
+<td><code><a href="#FailurePercentageEjection">FailurePercentageEjection</a></code></td>
+<td>
+<p>FailurePercent Algorithm for Grpc-xds proxyless for deciding
+if the host is an outlier or not.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="FailurePercentageEjection">FailurePercentageEjection</h2>
+<section>
+<p>Parameters for the failure percentage algorithm.
+This algorithm ejects individual endpoints whose failure rate is greater than
+some threshold, independently of any other endpoint</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FailurePercentageEjection-threshold">
+<td><code>threshold</code></td>
+<td><code><a href="#google-protobuf-UInt32Value">UInt32Value</a></code></td>
+<td>
+<p>The failure percentage to use when determining failure percentage-based outlier detection. If
+the failure percentage of a given address is greater than or equal to this value, it will be
+ejected. Defaults to 85.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="FailurePercentageEjection-enforcement_percentage">
+<td><code>enforcementPercentage</code></td>
+<td><code><a href="#google-protobuf-UInt32Value">UInt32Value</a></code></td>
+<td>
+<p>The % chance that an address will be actually ejected when an outlier status is detected through
+failure percentage statistics. This setting can be used to disable ejection or to ramp it up
+slowly. Defaults to 100.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="FailurePercentageEjection-minimum_hosts">
+<td><code>minimumHosts</code></td>
+<td><code><a href="#google-protobuf-UInt32Value">UInt32Value</a></code></td>
+<td>
+<p>The minimum number of addresses in order to perform failure percentage-based ejection.
+If the total number of addresses is less than this value, failure percentage-based
+ejection will not be performed. Defaults to 5.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="FailurePercentageEjection-request_volume">
+<td><code>requestVolume</code></td>
+<td><code><a href="#google-protobuf-UInt32Value">UInt32Value</a></code></td>
+<td>
+<p>The minimum number of total requests that must be collected in one interval (as defined by the
+interval duration above) to perform failure percentage-based ejection for this address. If the
+volume is lower than this setting, failure percentage-based ejection will not be performed for
+this host. Defaults to 50.</p>
 
 </td>
 <td>

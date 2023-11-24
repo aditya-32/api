@@ -895,6 +895,36 @@ message OutlierDetection {
   // disabled by setting it to 0%. The default is 0% as it's not typically
   // applicable in k8s environments with few pods per service.
   int32 min_health_percent = 5;
+
+  // FailurePercent Algorithm for Grpc-xds proxyless for deciding
+  // if the host is an outlier or not.
+  FailurePercentageEjection failure_percentage_ejection = 10;
+}
+
+// Parameters for the failure percentage algorithm.
+// This algorithm ejects individual endpoints whose failure rate is greater than
+// some threshold, independently of any other endpoint
+message FailurePercentageEjection {
+  // The failure percentage to use when determining failure percentage-based outlier detection. If
+  // the failure percentage of a given address is greater than or equal to this value, it will be
+  // ejected. Defaults to 85.
+  google.protobuf.UInt32Value threshold = 1;
+
+  // The % chance that an address will be actually ejected when an outlier status is detected through
+  // failure percentage statistics. This setting can be used to disable ejection or to ramp it up
+  // slowly. Defaults to 100.
+  google.protobuf.UInt32Value enforcement_percentage = 2;
+
+  // The minimum number of addresses in order to perform failure percentage-based ejection.
+  // If the total number of addresses is less than this value, failure percentage-based
+  // ejection will not be performed. Defaults to 5.
+  google.protobuf.UInt32Value minimum_hosts = 3;
+
+  // The minimum number of total requests that must be collected in one interval (as defined by the
+  // interval duration above) to perform failure percentage-based ejection for this address. If the
+  // volume is lower than this setting, failure percentage-based ejection will not be performed for
+  // this host. Defaults to 50.
+  google.protobuf.UInt32Value request_volume = 4;
 }
 
 // SSL/TLS related settings for upstream connections. See Envoy's [TLS
